@@ -1,0 +1,44 @@
+md-content(layout='column')
+    md-card(ng-form='AccountSigninVM.ngForm')
+        md-card-header
+            md-card-header-text
+                md-title(translate='SIGNIN.TITLE')
+
+        md-card-content
+            md-input-container.md-block
+                label(translate='SIGNIN.FORM.EMAIL.LABEL')
+                input(
+                    type='email'
+                    ng-model='AccountSigninVM.User.email'
+                    name='email'
+                    autocomplete='off'
+                    required
+                )
+
+                div(ng-messages='AccountSigninVM.ngForm.email.$error')
+                    div(ng-message='required')
+                        span(translate="SIGNIN.FORM.EMAIL.ERROR.REQUIRED")
+                    div(ng-message='email')
+                        span(translate="SIGNIN.FORM.EMAIL.ERROR.EMAIL")
+
+            md-input-container.md-block
+                label(translate='SIGNIN.FORM.PASSWORD.LABEL')
+                input(
+                    type='password'
+                    ng-model='AccountSigninVM.User.password'
+                    name='password'
+                    autocomplete='off'
+                    required
+                )
+                div(ng-messages='AccountSigninVM.ngForm.password.$error')
+                    div(ng-message='required')
+                        span(translate="SIGNIN.FORM.PASSWORD.ERROR.REQUIRED")
+
+            p(ng-show='AccountSigninVM.error', translate="SIGNIN.FORM.ERRORS.FAIL")
+
+        md-card-actions(layout='row', layout-align='end center')
+            md-button.md-primary(
+                ng-click='AccountSigninVM.submit(AccountSigninVM.User)'
+                ng-disabled='!AccountSigninVM.ngForm.$valid'
+                translate="SIGNIN.FORM.BUTTONS.SIGNIN"
+            )

@@ -1,0 +1,7 @@
+md-content(layout='column')
+    md-card(ng-repeat='Article in ArticlesListVM.articles')
+        md-card-header
+            md-card-header-text
+                md-title(ng-bind='Article.name')
+
+        md-card-content(ng-bind-html='Article.content')

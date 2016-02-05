@@ -1,0 +1,26 @@
+{
+  "SIGNIN": {
+    "TITLE": "Zaloguj się",
+    "FORM": {
+      "EMAIL": {
+        "LABEL": "E-mail",
+        "ERROR": {
+          "REQUIRED": "Pole nie może być puste",
+          "EMAIL": "Wpisz prawidłowy adres e-mail"
+        }
+      },
+      "PASSWORD": {
+        "LABEL": "Hasło",
+        "ERROR": {
+          "REQUIRED": "Pole nie może być puste"
+        }
+      },
+      "ERRORS": {
+        "FAIL": "Niepoprawne dane. Spróbuj ponownie."
+      },
+      "BUTTONS": {
+        "SIGNIN": "Zaloguj się"
+      }
+    }
+  }
+}

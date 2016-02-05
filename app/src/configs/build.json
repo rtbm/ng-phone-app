@@ -1,0 +1,9 @@
+{
+  "Config": {
+    "api": "//localhost:3000",
+    "languages": [
+      "en",
+      "pl"
+    ]
+  }
+}

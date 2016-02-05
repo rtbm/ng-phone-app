@@ -1,0 +1,23 @@
+md-toolbar
+    .md-toolbar-tools
+        md-button.md-icon-button.material-icons(
+            ng-click="AppVM.openSidenav()"
+        ) menu
+        span ngPhoneApp
+
+div(layout='row')
+    md-sidenav.md-sidenav-left(
+        md-component-id='sidenav'
+    )
+        md-menu-content
+            md-menu-item
+                md-button(ui-sref='app.articles')
+                    md-icon(md-menu-align-target).material-icons edit
+                    span(translate="LAYOUT.ARTICLES")
+
+            md-menu-item
+                md-button(ui-sref='app.account_signin')
+                    md-icon(md-menu-align-target).material-icons edit
+                    span(translate="LAYOUT.SIGNIN")
+
+    ui-view(flex='100')

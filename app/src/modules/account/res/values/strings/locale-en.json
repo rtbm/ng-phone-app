@@ -1,0 +1,26 @@
+{
+  "SIGNIN": {
+    "TITLE": "Sign in",
+    "FORM": {
+      "EMAIL": {
+        "LABEL": "E-mail",
+        "ERROR": {
+          "REQUIRED": "You did not enter a field",
+          "EMAIL": "E-mail address is incorrect"
+        }
+      },
+      "PASSWORD": {
+        "LABEL": "Password",
+        "ERROR": {
+          "REQUIRED": "You did not enter a field"
+        }
+      },
+      "ERRORS": {
+        "FAIL": "Sorry that didn't work. Please try again."
+      },
+      "BUTTONS": {
+        "SIGNIN": "Sign in"
+      }
+    }
+  }
+}
