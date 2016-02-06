@@ -21,8 +21,13 @@ div(layout='row')
                     span(translate="LAYOUT.SIGNIN")
 
             md-menu-item
-                md-button(ui-sref='app.nfc_test')
+                md-button(ui-sref='app.nfc_demo')
                     md-icon(md-menu-align-target).material-icons nfc
                     span(translate="LAYOUT.NFC")
+
+            md-menu-item
+                md-button(ui-sref='app.camera_demo')
+                    md-icon(md-menu-align-target).material-icons camera
+                    span(translate="LAYOUT.CAMERA")
 
     ui-view(flex='100')

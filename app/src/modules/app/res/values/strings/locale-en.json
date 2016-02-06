@@ -2,6 +2,7 @@
   "LAYOUT": {
     "ARTICLES": "Articles",
     "SIGNIN": "Sign in",
-    "NFC": "NFC Test"
+    "NFC": "NFC Test",
+    "CAMERA": "Camera"
   }
 }

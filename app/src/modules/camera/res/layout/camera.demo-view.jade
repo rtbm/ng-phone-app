@@ -1,0 +1,10 @@
+md-content(layout='column')
+    md-card
+        md-card-header
+            md-card-header-text
+                md-title CAMERA DEMO
+
+        md-card-content
+            img(ng-src='{{CameraDemoVM.data}}')
+
+            button(ng-click='CameraDemoVM.takePicture()') TAKE PICTURE

@@ -1,4 +1,4 @@
-class NfcDetailController {
+class NfcDemoController {
     constructor(NfcService) {
         "ngInject";
 
@@ -8,12 +8,14 @@ class NfcDetailController {
 
                 NfcService.writeTextRecord('hello world!').then(() => {
                     console.log('[NFC] WRITE OK');
+
                 }, () => {
                     console.log('[NFC] ERROR');
+
                 });
             });
         });
     }
 }
 
-export { NfcDetailController };
+export { NfcDemoController };
