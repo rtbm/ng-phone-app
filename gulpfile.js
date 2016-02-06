@@ -20,7 +20,6 @@ var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var cssNano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
-
 var templateCache = require('gulp-angular-templatecache');
 
 var ENV_PRODUCTION = args.env === 'production';
@@ -133,6 +132,7 @@ gulp.task('build', ['build:scripts', 'build:strings', 'build:layouts', 'build:in
 
 gulp.task('watch', function () {
     gulp.watch([
+        './app/src/modules/**/index.js',
         './app/src/modules/**/javascript/**/*.js',
         '!./app/src/modules/**/javascript/tests/*.js'
     ], ['build:scripts']);

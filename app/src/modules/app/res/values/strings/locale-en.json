@@ -1,6 +1,7 @@
 {
   "LAYOUT": {
     "ARTICLES": "Articles",
-    "SIGNIN": "Sign in"
+    "SIGNIN": "Sign in",
+    "NFC": "NFC Test"
   }
 }
