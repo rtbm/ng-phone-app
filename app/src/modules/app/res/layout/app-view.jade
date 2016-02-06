@@ -11,23 +11,28 @@ div(layout='row')
     )
         md-menu-content
             md-menu-item
-                md-button(ui-sref='app.articles')
-                    md-icon(md-menu-align-target).material-icons edit
-                    span(translate="LAYOUT.ARTICLES")
+                md-button(ui-sref='app.account_signin')
+                    md-icon(md-menu-align-target).material-icons person
+                    span(translate="APP.MENU.SIGNIN")
 
             md-menu-item
-                md-button(ui-sref='app.account_signin')
+                md-button(ui-sref='app.account_signup')
+                    md-icon(md-menu-align-target).material-icons person_add
+                    span(translate="APP.MENU.SIGNUP")
+
+            md-menu-item
+                md-button(ui-sref='app.articles')
                     md-icon(md-menu-align-target).material-icons edit
-                    span(translate="LAYOUT.SIGNIN")
+                    span(translate="APP.MENU.ARTICLES")
 
             md-menu-item
                 md-button(ui-sref='app.nfc_demo')
                     md-icon(md-menu-align-target).material-icons nfc
-                    span(translate="LAYOUT.NFC")
+                    span(translate="APP.MENU.NFC")
 
             md-menu-item
                 md-button(ui-sref='app.camera_demo')
                     md-icon(md-menu-align-target).material-icons camera
-                    span(translate="LAYOUT.CAMERA")
+                    span(translate="APP.MENU.CAMERA")
 
     ui-view(flex='100')

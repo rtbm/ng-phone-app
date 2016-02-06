@@ -1,8 +1,11 @@
 {
-  "LAYOUT": {
-    "ARTICLES": "Articles",
-    "SIGNIN": "Sign in",
-    "NFC": "NFC Test",
-    "CAMERA": "Camera"
+  "APP": {
+    "MENU": {
+      "ARTICLES": "Articles",
+      "SIGNIN": "Sign in",
+      "SIGNUP": "Sign up",
+      "NFC": "NFC test",
+      "CAMERA": "Camera test"
+    }
   }
 }
