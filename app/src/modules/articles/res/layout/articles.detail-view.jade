@@ -1,0 +1,21 @@
+md-toolbar
+    .md-toolbar-tools
+        md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
+        span(ng-bind='ArticlesDetailVM.Article.name')
+        span(flex)
+        md-button.md-icon-button.material-icons(ui-sref='app.articles_create') add_circle
+
+md-content
+    md-card
+        md-card-title
+            md-card-title-text
+                span.md-headline(ng-bind='ArticlesDetailVM.Article.name')
+                span.md-subhead(ng-bind='ArticlesDetailVM.Article.description')
+
+        md-card-content(layout='row', layout-align='space-between')
+            .md-media-xl.card-media
+                img(
+                    ng-src='{{ArticlesDetailVM.Config.api}}/240x240/{{ArticlesDetailVM.Article.image}}'
+                    alt='{{ArticlesDetailVM.Article.name}}'
+                    flex='100'
+                )

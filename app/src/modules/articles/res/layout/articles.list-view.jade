@@ -1,7 +1,31 @@
-md-content(layout='column')
-    md-card(ng-repeat='Article in ArticlesListVM.articles')
-        md-card-header
-            md-card-header-text
-                md-title(ng-bind='Article.name')
+md-toolbar
+    .md-toolbar-tools
+        md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
+        span(translate='APP.ARTICLES.ARTICLES')
+        span(flex)
+        md-button.md-icon-button.material-icons(ui-sref='app.articles_create') add_circle
 
-        md-card-content(ng-bind-html='Article.content')
+md-content
+    md-card(
+        ng-repeat='Article in ArticlesListVM.articles'
+    )
+        md-card-title(ui-sref='app.articles_detail({ articleId: Article._id })')
+            md-card-title-text
+                span.md-headline(ng-bind='Article.name')
+                span.md-subhead(ng-bind='Article.description')
+
+            md-card-title-media
+                img.md-media-md.card-media(
+                    ng-src="{{ArticlesListVM.Config.api}}/112x112/{{Article.image}}"
+                    alt='{{Article.name}}'
+
+                )
+
+        md-card-actions(
+            layout='row'
+            layout-align='end center'
+        )
+            md-button(
+                ui-sref='app.articles_detail({ articleId: Article._id })'
+                translate='APP.ARTICLES.SHOW'
+            )

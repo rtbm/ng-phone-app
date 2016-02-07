@@ -26,5 +26,14 @@ angular.module('ngPhone', [
     'ngPhone.articles'
 
 ]).config(($urlRouterProvider) => {
-    $urlRouterProvider.otherwise('/app/');
+    $urlRouterProvider.otherwise('/app/articles');
+
+}).run(($rootScope, $state, store) => {
+    "ngInject";
+    $rootScope.$on('$stateChangeStart', (event, toState) => {
+        if(!store.get('jwt') && !(toState.data && toState.data.notProtected)) {
+            event.preventDefault();
+            $state.go('app.account_signin');
+        }
+    });
 });

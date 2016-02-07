@@ -4,8 +4,13 @@
       "ARTICLES": "Articles",
       "SIGNIN": "Sign in",
       "SIGNUP": "Sign up",
-      "NFC": "NFC test",
-      "CAMERA": "Camera test"
+      "NFC": "NFC - DEMO",
+      "CAMERA": "Camera - DEMO"
+    },
+    "VALIDATION": {
+      "REQUIRED": "You did not enter a field",
+      "EMAIL": "E-mail address is incorrect",
+      "FAIL": "Sorry that didn't work. Please try again."
     }
   }
 }

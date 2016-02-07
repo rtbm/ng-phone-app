@@ -3,10 +3,13 @@ function NfcRoutes ($stateProvider) {
 
     $stateProvider
         .state('app.nfc_demo', {
-            url: '/',
+            url: '/nfc',
             templateUrl: 'nfc/res/layout/nfc.demo-view.html',
             controller: 'NfcDemoController',
-            controllerAs: 'NfcDemoVM'
+            controllerAs: 'NfcDemoVM',
+            data: {
+                notProtected: true
+            }
         });
 }
 

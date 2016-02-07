@@ -4,14 +4,14 @@ class CameraDemoController {
         this.CameraService = CameraService;
     }
 
-    takePicture () {
+    getPicture () {
         document.addEventListener('deviceready', () => {
             this.CameraService.getPicture({
                 destinationType: Camera.DestinationType.DATA_URL,
                 correctOrientation: true,
                 targetWidth: 640
             }).then((imageData) => {
-                this.data = 'data:image/jpeg;base64,' + imageData;
+                this.data = imageData;
             });
         });
     }

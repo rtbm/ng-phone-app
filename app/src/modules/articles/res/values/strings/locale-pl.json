@@ -1,0 +1,13 @@
+{
+  "APP": {
+    "ARTICLES": {
+      "ARTICLES": "Artykuły",
+      "CREATE": "Stwórz artykuł",
+      "NAME": "Nazwa",
+      "DESCRIPTION": "Opis",
+      "SAVE": "Zapisz",
+      "SHOW": "Pokaż",
+      "SHOT_PHOTO": "Zrób fotkę"
+    }
+  }
+}

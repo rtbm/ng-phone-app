@@ -1,11 +1,11 @@
 class AppController {
-    constructor($mdSidenav) {
+    constructor($mdSidenav, store) {
         "ngInject";
-
+        this.store = store;
         this.$mdSidenav = $mdSidenav;
     }
 
-    openSidenav () {
+    toggleSidenav () {
         this.$mdSidenav('sidenav').toggle();
     }
 

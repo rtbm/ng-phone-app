@@ -1,7 +1,7 @@
 class AccountSigninController {
-    constructor (AccountService, $state, store) {
+    constructor (Account, $state, store) {
         "ngInject";
-        this.AccountService = AccountService;
+        this.Account = Account;
         this.$state = $state;
         this.store = store;
 
@@ -12,7 +12,7 @@ class AccountSigninController {
     }
 
     submit (User) {
-        this.AccountService.save({ action: 'signin' }, {
+        this.Account.save({ action: 'signin' }, {
             email: User.email,
             password: User.password
 

@@ -1,23 +1,8 @@
 class ArticlesListController {
-    constructor() {
+    constructor (Config, Articles) {
         "ngInject";
-
-        this.articles = [{
-            name: 'Sample Article',
-            content: 'Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor'
-        },{
-            name: 'Sample Article',
-            content: 'Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor'
-        },{
-            name: 'Sample Article',
-            content: 'Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor'
-        },{
-            name: 'Sample Article',
-            content: 'Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor'
-        },{
-            name: 'Sample Article',
-            content: 'Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor'
-        }];
+        this.Config = Config;
+        this.articles = Articles.query()
     }
 }
 

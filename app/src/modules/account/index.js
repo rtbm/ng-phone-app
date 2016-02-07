@@ -4,7 +4,7 @@ import { AccountSigninController } from './javascript/controllers/account.signin
 import { AccountRoutes } from './javascript/routes/account-routes';
 
 export default angular.module('ngPhone.account', [])
-    .factory('AccountService', AccountService)
+    .factory('Account', AccountService)
     .controller('AccountSignupController', AccountSignupController)
     .controller('AccountSigninController', AccountSigninController)
     .config(AccountRoutes);

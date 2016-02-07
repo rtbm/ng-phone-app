@@ -3,10 +3,13 @@ function CameraRoutes ($stateProvider) {
 
     $stateProvider
         .state('app.camera_demo', {
-            url: '/',
+            url: '/camera',
             templateUrl: 'camera/res/layout/camera.demo-view.html',
             controller: 'CameraDemoController',
-            controllerAs: 'CameraDemoVM'
+            controllerAs: 'CameraDemoVM',
+            data: {
+                notProtected: true
+            }
         });
 }
 

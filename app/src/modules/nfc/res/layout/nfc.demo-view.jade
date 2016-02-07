@@ -1,7 +1,12 @@
-md-content(layout='column')
+md-toolbar
+    .md-toolbar-tools
+        md-button.md-icon-button.material-icons(ng-click="AppVM.toggleSidenav()") menu
+        span(translate='APP.NFC.NFC')
+
+md-content
     md-card
         md-card-header
             md-card-header-text
-                md-title NFC TEST
+                md-title(translate='APP.NFC.NFC')
 
         md-card-content(ng-bind='NfcDemoVM.data')

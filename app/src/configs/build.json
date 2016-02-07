@@ -1,6 +1,6 @@
 {
   "Config": {
-    "api": "//localhost:3000",
+    "api": "http://localhost:3000",
     "languages": [
       "en",
       "pl"

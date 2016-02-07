@@ -1,13 +1,10 @@
 {
-  "ACCOUNT": {
-    "SIGNIN": "Zaloguj się",
-    "SIGNUP": "Zapisz się",
-    "EMAIL": "E-mail",
-    "PASSWORD": "Hasło",
-    "VALIDATION": {
-      "REQUIRED": "Pole jest wymagane.",
-      "EMAIL": "Niepoprawny adres e-mail.",
-      "FAIL": "Coś poszło nie tak. Spróbuj ponownie."
+  "APP": {
+    "ACCOUNT": {
+      "SIGNIN": "Zaloguj się",
+      "SIGNUP": "Zapisz się",
+      "EMAIL": "E-mail",
+      "PASSWORD": "Hasło"
     }
   }
 }
