@@ -2,28 +2,22 @@ function NfcService($q) {
     "ngInject";
 
     return {
-        enabled: () => {
-            var q = $q.defer();
-
-            nfc.enabled((nfcEvent) => {
-                q.resolve(nfcEvent);
-            }, () => {
-                q.reject(err);
-            });
-
-            return q.promise;
-        },
-
         NdefListener: () => {
             var q = $q.defer();
 
-            nfc.addNdefListener((nfcEvent) => {
+            var cb = (nfcEvent) => {
                 q.resolve(nfcEvent);
-            }, () => {
+            };
+
+            nfc.addNdefListener(cb, () => {
                 q.notify('Waiting for NFC');
             }, (err) => {
                 q.reject(err);
             });
+
+            q.promise.cancel = () => {
+                nfc.removeNdefListener(cb);
+            };
 
             return q.promise;
         },

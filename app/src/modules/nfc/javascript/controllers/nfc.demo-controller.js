@@ -2,16 +2,17 @@ class NfcDemoController {
     constructor(NfcService) {
         "ngInject";
 
+        this.NfcService = NfcService;
+
         document.addEventListener('deviceready', () => {
-            NfcService.NdefListener().then((nfcEvent) => {
+            this.NfcService.NdefListener().then((nfcEvent) => {
                 this.data = angular.toJson(nfcEvent);
 
-                NfcService.writeTextRecord('hello world!').then(() => {
+                this.NfcService.writeTextRecord('hello world!').then(() => {
                     console.log('[NFC] WRITE OK');
-
+                    this.NfcService.NdefListener().cancel();
                 }, () => {
                     console.log('[NFC] ERROR');
-
                 });
             });
         });

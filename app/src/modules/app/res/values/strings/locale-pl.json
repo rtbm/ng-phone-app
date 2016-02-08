@@ -5,7 +5,8 @@
       "SIGNIN": "Zaloguj się",
       "SIGNUP": "Zapisz się",
       "NFC": "NFC - DEMO",
-      "CAMERA": "Aparat - DEMO"
+      "CAMERA": "Aparat - DEMO",
+      "GEOLOCATION": "Geolokalizacja - DEMO"
     },
     "VALIDATION": {
       "REQUIRED": "Pole jest wymagane.",

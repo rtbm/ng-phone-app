@@ -1,6 +1,7 @@
 import ngPhoneApp from './modules/app';
 import ngPhoneNfc from './modules/nfc';
 import ngPhoneCamera from './modules/camera';
+import ngPhoneGeolocation from './modules/geolocation';
 import ngPhoneAccount from './modules/account';
 import ngPhoneArticles from './modules/articles';
 
@@ -22,6 +23,7 @@ angular.module('ngPhone', [
     'ngPhone.app',
     'ngPhone.nfc',
     'ngPhone.camera',
+    'ngPhone.geolocation',
     'ngPhone.account',
     'ngPhone.articles'
 
