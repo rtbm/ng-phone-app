@@ -1,9 +1,7 @@
 md-toolbar
     .md-toolbar-tools
-        md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
+        md-button.md-icon-button.material-icons(ui-sref='app.articles') arrow_back
         span(ng-bind='ArticlesDetailVM.Article.name')
-        span(flex)
-        md-button.md-icon-button.material-icons(ui-sref='app.articles_create') add_circle
 
 md-content
     md-card

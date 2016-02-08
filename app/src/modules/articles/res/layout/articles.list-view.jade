@@ -2,30 +2,25 @@ md-toolbar
     .md-toolbar-tools
         md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
         span(translate='APP.ARTICLES.ARTICLES')
-        span(flex)
-        md-button.md-icon-button.material-icons(ui-sref='app.articles_create') add_circle
 
 md-content
     md-card(
         ng-repeat='Article in ArticlesListVM.articles'
     )
-        md-card-title(ui-sref='app.articles_detail({ articleId: Article._id })')
+        md-card-title
             md-card-title-text
-                span.md-headline(ng-bind='Article.name')
+                span.md-headline(ng-bind='Article.name', ui-sref='app.articles_detail({ articleId: Article._id })')
                 span.md-subhead(ng-bind='Article.description')
 
-            md-card-title-media
-                img.md-media-md.card-media(
-                    ng-src="{{ArticlesListVM.Config.api}}/112x112/{{Article.image}}"
-                    alt='{{Article.name}}'
-
-                )
-
-        md-card-actions(
-            layout='row'
-            layout-align='end center'
-        )
-            md-button(
+        md-card-content(layout='row', layout-align='space-between')
+            img.md-media-xl.card-media(
+                ng-src="{{ArticlesListVM.Config.api}}/240x240/{{Article.image}}"
+                alt='{{Article.name}}'
                 ui-sref='app.articles_detail({ articleId: Article._id })'
-                translate='APP.ARTICLES.SHOW'
             )
+            md-card-actions(layout='column')
+                md-button.md-icon-button.material-icons(href='') flight_takeoff
+                md-button.md-icon-button.material-icons(href='') favorite_border
+                md-button.md-icon-button.material-icons(href='') share
+
+   md-button.md-fab.md-fab-bottom-right.material-icons(ui-sref='app.articles_create') add

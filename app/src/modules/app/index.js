@@ -10,7 +10,7 @@ export default angular.module('ngPhone.app', [])
     .service('GeolocationService', GeolocationService)
     .controller('AppController', AppController)
     .config(AppRoutes)
-    .config((Config, $translateProvider, $httpProvider, jwtInterceptorProvider) => {
+    .config((Config, $translateProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider) => {
         "ngInject";
 
         $translateProvider.registerAvailableLanguageKeys(Config.languages);
@@ -22,4 +22,8 @@ export default angular.module('ngPhone.app', [])
         };
 
         $httpProvider.interceptors.push('jwtInterceptor');
+
+        $mdThemingProvider.theme('default')
+            .primaryPalette('blue-grey')
+            .accentPalette('red');
     });

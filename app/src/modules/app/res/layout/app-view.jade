@@ -1,35 +1,36 @@
-md-sidenav.md-sidenav-left(
-    md-component-id='sidenav'
-)
-    md-menu-content
-        md-menu-item(ng-show="!AppVM.store.get('jwt')")
-            md-button(ui-sref='app.account_signin', ng-click='AppVM.toggleSidenav()')
-                md-icon(md-menu-align-target).material-icons person
-                span(translate='APP.MENU.SIGNIN')
+.container
+    md-sidenav.md-sidenav-left(md-component-id='sidenav')
+        md-toolbar
 
-        md-menu-item(ng-show="!AppVM.store.get('jwt')")
-            md-button(ui-sref='app.account_signup', ng-click='AppVM.toggleSidenav()')
-                md-icon(md-menu-align-target).material-icons person_add
-                span(translate='APP.MENU.SIGNUP')
+        md-menu-content
+            md-menu-item(ng-show="!AppVM.store.get('jwt')")
+                md-button(ui-sref='app.account_signin', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons person
+                    span(translate='APP.MENU.SIGNIN')
 
-        md-menu-item(ng-show="AppVM.store.get('jwt')")
-            md-button(ui-sref='app.articles', ng-click='AppVM.toggleSidenav()')
-                md-icon(md-menu-align-target).material-icons edit
-                span(translate='APP.MENU.ARTICLES')
+            md-menu-item(ng-show="!AppVM.store.get('jwt')")
+                md-button(ui-sref='app.account_signup', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons person_add
+                    span(translate='APP.MENU.SIGNUP')
 
-        md-menu-item
-            md-button(ui-sref='app.nfc_demo', ng-click='AppVM.toggleSidenav()')
-                md-icon(md-menu-align-target).material-icons nfc
-                span(translate='APP.MENU.NFC')
+            md-menu-item(ng-show="AppVM.store.get('jwt')")
+                md-button(ui-sref='app.articles', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons edit
+                    span(translate='APP.MENU.ARTICLES')
 
-        md-menu-item
-            md-button(ui-sref='app.camera_demo', ng-click='AppVM.toggleSidenav()')
-                md-icon(md-menu-align-target).material-icons camera
-                span(translate='APP.MENU.CAMERA')
+            md-menu-item
+                md-button(ui-sref='app.nfc_demo', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons nfc
+                    span(translate='APP.MENU.NFC')
 
-        md-menu-item
-            md-button(ui-sref='app.geolocation_demo', ng-click='AppVM.toggleSidenav()')
-                md-icon(md-menu-align-target).material-icons gps_fixed
-                span(translate='APP.MENU.GEOLOCATION')
+            md-menu-item
+                md-button(ui-sref='app.camera_demo', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons camera
+                    span(translate='APP.MENU.CAMERA')
 
-ui-view(flex='100')
+            md-menu-item
+                md-button(ui-sref='app.geolocation_demo', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons gps_fixed
+                    span(translate='APP.MENU.GEOLOCATION')
+
+    ui-view(layout-fill)
