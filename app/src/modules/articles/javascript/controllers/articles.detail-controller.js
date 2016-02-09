@@ -1,8 +1,11 @@
 class ArticlesDetailController {
     constructor ($stateParams, Config, Articles) {
         "ngInject";
-        this.Config = Config;
-        this.Article = Articles.get({ articleId: $stateParams.articleId });
+
+        Articles.get({ articleId: $stateParams.articleId }, (Article) => {
+            Article.image = Config.api + '/' + Article.image;
+            this.Article = Article;
+        });
     }
 }
 

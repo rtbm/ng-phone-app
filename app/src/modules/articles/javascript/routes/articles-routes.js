@@ -19,7 +19,14 @@ function ArticlesRoutes ($stateProvider) {
             templateUrl: 'articles/res/layout/articles.detail-view.html',
             controller: 'ArticlesDetailController',
             controllerAs: 'ArticlesDetailVM'
-        });
+        })
+        .state('app.articles_edit', {
+            url: '/articles/edit/:articleId',
+            templateUrl: 'articles/res/layout/articles.edit-view.html',
+            controller: 'ArticlesEditController',
+            controllerAs: 'ArticlesEditVM'
+        })
+    ;
 }
 
 export { ArticlesRoutes };

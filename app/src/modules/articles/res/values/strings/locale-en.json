@@ -2,7 +2,7 @@
   "APP": {
     "ARTICLES": {
       "ARTICLES": "Articles",
-      "CREATE": "Create article",
+      "CREATE": "Create",
       "EDIT": "Edit",
       "REMOVE": "Remove",
       "NAME": "Name",

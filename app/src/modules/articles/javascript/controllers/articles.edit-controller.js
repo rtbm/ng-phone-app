@@ -1,15 +1,16 @@
-class ArticlesCreateController {
-    constructor ($state, CameraService, Articles) {
+class ArticlesEditController {
+    constructor ($state, CameraService, Config, Articles) {
         "ngInject";
         this.$state = $state;
         this.CameraService = CameraService;
         this.Articles = Articles;
 
-        this.Article = {
-            name: '',
-            description: '',
-            image: ''
-        }
+        this.Articles.get({
+            articleId: $state.params.articleId
+        }, (Article) => {
+            Article.image = Config.api + '/' + Article.image;
+            this.Article = Article;
+        });
     }
 
     getPicture () {
@@ -27,11 +28,9 @@ class ArticlesCreateController {
         });
     }
 
-    create (Article) {
-        this.Articles.save(Article, () => {
-            this.$state.go('app.articles');
-        });
+    update (Article) {
+       // TODO
     }
 }
 
-export { ArticlesCreateController };
+export { ArticlesEditController };

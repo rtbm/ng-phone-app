@@ -1,5 +1,5 @@
 md-toolbar.toolbar-image(
-    style='background-image:url({{ArticlesDetailVM.Config.api}}/{{ArticlesDetailVM.Article.image}})'
+    style='background-image:url({{ArticlesDetailVM.Article.image}})'
 )
     .md-toolbar-tools
         md-button.md-icon-button.material-icons(ui-sref='app.articles') arrow_back
@@ -9,11 +9,13 @@ md-toolbar.toolbar-image(
             md-button.md-icon-button.material-icons(ng-click='$mdOpenMenu($event)') more_vert
             md-menu-content(width='2')
                 md-menu-item
-                    md-button
+                    md-button(
+                        ui-sref='app.articles_edit({ articleId: ArticlesDetailVM.Article._id })'
+                    )
                         md-icon(md-menu-align-target).material-icons edit
                         span(translate='APP.ARTICLES.EDIT')
                 md-menu-item
-                    md-button
+                    md-button()
                         md-icon(md-menu-align-target).material-icons remove
                         span(translate='APP.ARTICLES.REMOVE')
 

@@ -72,7 +72,9 @@ gulp.task('build:styles', function () {
     return gulp.src('./app/src/modules/**/res/values/styles/*.less')
         .pipe(less())
         .pipe(autoprefixer())
-        .pipe(gulpif(ENV_PRODUCTION, cssNano()))
+        .pipe(gulpif(ENV_PRODUCTION, cssNano({
+            zindex: false
+        })))
         .pipe(concat('styles.css'))
         .pipe(gulp.dest(TARGET_DIR));
 });
