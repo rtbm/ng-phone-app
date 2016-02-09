@@ -3,6 +3,8 @@
     "ARTICLES": {
       "ARTICLES": "Articles",
       "CREATE": "Create article",
+      "EDIT": "Edit",
+      "REMOVE": "Remove",
       "NAME": "Name",
       "DESCRIPTION": "Description",
       "SAVE": "Save",
