@@ -2,6 +2,12 @@ function AccountRoutes ($stateProvider) {
     "ngInject";
 
     $stateProvider
+        .state('app.account_settings', {
+            url: '/account',
+            templateUrl: 'account/res/layout/account.settings-view.html',
+            controller: 'AccountSettingsController',
+            controllerAs: 'AccountSettingsVM'
+        })
         .state('app.account_signin', {
             url: '/account/signin',
             templateUrl: 'account/res/layout/account.signin-view.html',

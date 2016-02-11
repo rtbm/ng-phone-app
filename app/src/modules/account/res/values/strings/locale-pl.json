@@ -4,7 +4,10 @@
       "SIGNIN": "Zaloguj się",
       "SIGNUP": "Zapisz się",
       "EMAIL": "E-mail",
-      "PASSWORD": "Hasło"
+      "PASSWORD": "Hasło",
+      "SETTINGS": "Ustawienia",
+      "AVATAR": "Zdjęcie profilowe",
+      "UPDATE": "Zaaktualizuj"
     }
   }
 }

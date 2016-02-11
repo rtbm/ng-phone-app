@@ -6,7 +6,8 @@
       "SIGNUP": "Sign up",
       "NFC": "NFC - DEMO",
       "CAMERA": "Camera - DEMO",
-      "GEOLOCATION": "Geolocation - DEMO"
+      "GEOLOCATION": "Geolocation - DEMO",
+      "SETTINGS": "Settings"
     },
     "VALIDATION": {
       "REQUIRED": "You did not enter a field",

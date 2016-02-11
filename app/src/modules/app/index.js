@@ -12,11 +12,10 @@ export default angular.module('ngPhone.app', [])
     .config(AppRoutes)
     .config((Config, $translateProvider, $httpProvider, jwtInterceptorProvider, $mdThemingProvider) => {
         "ngInject";
-
         $translateProvider.registerAvailableLanguageKeys(Config.languages);
         $translateProvider.determinePreferredLanguage();
 
-        jwtInterceptorProvider.tokenGetter = function(store) {
+        jwtInterceptorProvider.tokenGetter = function (store) {
             "ngInject";
             return store.get('jwt');
         };
@@ -26,4 +25,14 @@ export default angular.module('ngPhone.app', [])
         $mdThemingProvider.theme('default')
             .primaryPalette('blue-grey')
             .accentPalette('red');
+
+    }).run(($rootScope, $state, store) => {
+        "ngInject";
+        $rootScope.$on('$stateChangeStart', (event, toState) => {
+            if (!store.get('jwt') && !(toState.data && toState.data.notProtected)) {
+                event.preventDefault();
+                $state.go('app.account_signin');
+            }
+        });
     });
+;

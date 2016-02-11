@@ -3,12 +3,13 @@ class ArticlesEditController {
         "ngInject";
         this.$state = $state;
         this.CameraService = CameraService;
+        this.Config = Config;
         this.Articles = Articles;
 
         this.Articles.get({
-            articleId: $state.params.articleId
+            articleId: this.$state.params.articleId
         }, (Article) => {
-            Article.image = Config.api + '/' + Article.image;
+            Article.image = this.Config.api + '/' + Article.image;
             this.Article = Article;
         });
     }
@@ -29,7 +30,11 @@ class ArticlesEditController {
     }
 
     update (Article) {
-       // TODO
+        var article = new this.Articles(Article);
+
+        article.$update(() => {
+            this.$state.go('app.articles');
+        });
     }
 }
 

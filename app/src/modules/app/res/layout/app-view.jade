@@ -18,6 +18,11 @@
                     md-icon(md-menu-align-target).material-icons edit
                     span(translate='APP.MENU.ARTICLES')
 
+            md-menu-item(ng-show="AppVM.store.get('jwt')")
+                md-button(ui-sref='app.account_settings', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons settings
+                    span(translate='APP.MENU.SETTINGS')
+
             md-menu-item
                 md-button(ui-sref='app.nfc_demo', ng-click='AppVM.toggleSidenav()')
                     md-icon(md-menu-align-target).material-icons nfc

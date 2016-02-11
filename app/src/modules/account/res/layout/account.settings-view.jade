@@ -1,0 +1,19 @@
+md-toolbar
+    .md-toolbar-tools
+        md-button.md-icon-button.material-icons(ng-click="AppVM.toggleSidenav()") menu
+        span(translate='APP.ACCOUNT.SETTINGS')
+
+md-content(layout='column')
+    md-card(ng-form='AccountSettingsVM.ngForm')
+        md-card-header
+            md-card-header-text
+                md-title(translate='APP.ACCOUNT.SETTINGS')
+
+        md-card-content
+
+        md-card-actions(layout='row', layout-align='end center')
+            md-button.md-primary(
+                ng-click='AccountSettingsVM.submit(AccountSettingsVM.User)'
+                ng-disabled='!AccountSettingsVM.ngForm.$valid'
+                translate="APP.ACCOUNT.UPDATE"
+            )
