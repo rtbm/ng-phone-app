@@ -30,7 +30,7 @@ class ArticlesEditController {
     }
 
     update (Article) {
-        var article = new this.Articles(Article);
+        let article = new this.Articles(Article);
 
         article.$update(() => {
             this.$state.go('app.articles');

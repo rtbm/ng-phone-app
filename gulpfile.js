@@ -92,12 +92,14 @@ gulp.task('build:config', function () {
 gulp.task('build:copy', function () {
     var fonts = gulp.src([
         'bower_components/roboto-fontface/fonts/*.{eot,ijmap,ttf,woff,woff2,svg}',
-        'bower_components/material-design-icons/iconfont/*.{eot,ijmap,ttf,woff,woff2,svg}'
+        'bower_components/material-design-icons/iconfont/*.{eot,ijmap,ttf,woff,woff2,svg}',
+        'app/src/assets/Hawcons/Font/Filled/fonts/*.{eot,svg,ttf,woff}'
     ])
         .pipe(gulp.dest(TARGET_DIR + '/fonts'));
 
     var styles = gulp.src([
         'bower_components/roboto-fontface/css/roboto-fontface.css',
+        'app/src/assets/Hawcons/Font/Filled/hawcons-icons.css',
         'bower_components/angular-material/angular-material.css',
         'bower_components/angular-loading-bar/build/loading-bar.css',
         'bower_components/material-design-icons/iconfont/material-icons.css'

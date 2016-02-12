@@ -1,9 +1,10 @@
-import ngPhoneApp from './modules/app';
-import ngPhoneNfc from './modules/nfc';
-import ngPhoneCamera from './modules/camera';
-import ngPhoneGeolocation from './modules/geolocation';
-import ngPhoneAccount from './modules/account';
-import ngPhoneArticles from './modules/articles';
+import * as ngPhoneApp from './modules/app';
+import * as ngPhoneNfc from './modules/nfc';
+import * as ngPhoneCamera from './modules/camera';
+import * as ngPhoneGeolocation from './modules/geolocation';
+import * as ngPhoneAccount from './modules/account';
+import * as ngPhoneArticles from './modules/articles';
+import * as ngPhoneWeather from './modules/weather';
 
 angular.module('ngPhone', [
     'ngAnimate',
@@ -25,9 +26,10 @@ angular.module('ngPhone', [
     'ngPhone.camera',
     'ngPhone.geolocation',
     'ngPhone.account',
-    'ngPhone.articles'
+    'ngPhone.articles',
+    'ngPhone.weather'
 
 ]).config(($urlRouterProvider) => {
-    $urlRouterProvider.otherwise('/app/articles');
+    $urlRouterProvider.otherwise('/app/weather');
 
 });

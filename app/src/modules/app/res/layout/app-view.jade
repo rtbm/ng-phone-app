@@ -38,4 +38,9 @@
                     md-icon(md-menu-align-target).material-icons gps_fixed
                     span(translate='APP.MENU.GEOLOCATION')
 
+            md-menu-item
+                md-button(ui-sref='app.weather', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons person
+                    span(translate='APP.MENU.WEATHER')
+
     ui-view(layout-fill)
