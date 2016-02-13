@@ -5,16 +5,22 @@ class WeatherController {
         this.GeolocationService = GeolocationService;
         this.WeatherService = WeatherService;
 
-        this.DeviceService.ready()
-            .then(() => {
-                return this.GeolocationService.getCurrentPosition()
-            })
-            .then((position) => {
-                return this.WeatherService.getWeather(position.coords);
-            })
-            .then((weather) => {
-                this.weather = weather.data;
+        this.DeviceService.ready().then(() => {
+            let geolocation = this.GeolocationService.getCurrentPosition({
+                timeout: 1200000,
+                enableHighAccuracy: true
             });
+
+            geolocation.then((position) => {
+                this.WeatherService.getWeather({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
+
+                }).then((weather) => {
+                    this.weather = weather.data;
+                });
+            });
+        });
     }
 }
 

@@ -1,13 +1,10 @@
 {
   "APP": {
     "MENU": {
-      "DASHBOARD": "Panel",
-      "ARTICLES": "Artykuły",
       "SIGNIN": "Zaloguj się",
       "SIGNUP": "Zapisz się",
-      "NFC": "NFC - DEMO",
-      "CAMERA": "Aparat - DEMO",
-      "GEOLOCATION": "Geolokalizacja - DEMO",
+      "DASHBOARD": "Panel",
+      "ARTICLES": "Kolekcja",
       "WEATHER": "Pogoda",
       "SETTINGS": "Ustawienia konta"
     },

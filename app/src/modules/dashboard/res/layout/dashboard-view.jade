@@ -1,7 +1,18 @@
-md-toolbar.toolbar-image
+md-toolbar.toolbar-image.toolbar-dashboard
     .md-toolbar-tools
         md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
         span(translate='APP.DASHBOARD.DASHBOARD')
+
+    .toolbar-panel(ng-show='DashboardVM.weather')
+        .md-subhead
+            span(ng-bind='DashboardVM.weather.description')
+            | &nbsp;(
+            span(ng-bind='DashboardVM.weather.wind.speed')
+            | m/s)
+
+        .md-display-2
+            span(ng-bind='DashboardVM.weather.temp')
+            |&deg;C
 
 md-content
     md-card(

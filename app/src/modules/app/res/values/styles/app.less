@@ -5,13 +5,26 @@ body {
   user-select: none;
 }
 
+.md-scroll-mask {
+  display: none;
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+  color: #fff;
+  background-color: #3C3C3C;
+  .md-list-item-text {
+    h2, h3 {
+      color: #ccc !important;
+    }
+    p {
+      color: #8C8C8C !important;
+    }
+  }
+}
+
 .container {
   max-height: 100%;
   overflow-y: scroll;
-}
-
-.md-scroll-mask {
-  display: none;
 }
 
 .toolbar-image {
@@ -19,4 +32,11 @@ body {
   height: 320px;
   background-size: 100%;
   background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.toolbar-panel {
+  padding: 0 24px;
+  position: absolute;
+  bottom: 10px;
 }

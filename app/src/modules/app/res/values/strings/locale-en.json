@@ -1,12 +1,10 @@
 {
   "APP": {
     "MENU": {
-      "ARTICLES": "Articles",
       "SIGNIN": "Sign in",
       "SIGNUP": "Sign up",
-      "NFC": "NFC - DEMO",
-      "CAMERA": "Camera - DEMO",
-      "GEOLOCATION": "Geolocation - DEMO",
+      "DASHBOARD": "Dashboard",
+      "ARTICLES": "Collection",
       "WEATHER": "Weather",
       "SETTINGS": "Profile settings"
     },

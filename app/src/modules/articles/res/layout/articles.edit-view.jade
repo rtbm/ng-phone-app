@@ -31,10 +31,9 @@ md-content
                     div(ng-message='required')
                         span(translate='APP.VALIDATION.REQUIRED')
 
-            img(
+            img.toolbar-image(
                 ng-if='ArticlesEditVM.Article.image'
-                ng-src='{{ArticlesEditVM.Article.image}}'
-                flex='100'
+                style='background-image:url({{ArticlesEditVM.Article.image}})'
             )
 
             md-button.md-fab.material-icons(

@@ -5,11 +5,12 @@
                 md-list-item.md-2-line
                     md-icon.md-avatar-icon person
                     .md-list-item-text
-                        h3(ng-bind='AppVM.GlobalsService.user.email')
-                        p
+                        h3
                             span(ng-bind='AppVM.GlobalsService.user.name.first')
                             | &nbsp;
                             span(ng-bind='AppVM.GlobalsService.user.name.last')
+                        p(ng-bind='AppVM.GlobalsService.user.email')
+
 
         md-menu-content
             md-menu-item(ng-show="!AppVM.GlobalsService.user._id")

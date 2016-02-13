@@ -28,8 +28,28 @@ export default angular.module('ngPhone.app', [])
 
         $httpProvider.interceptors.push('jwtInterceptor');
 
+        let customPrimary = {
+            '50': '#e4f5fa',
+            '100': '#cfeef6',
+            '200': '#b9e6f2',
+            '300': '#a4deee',
+            '400': '#8ed7ea',
+            '500': '#79CFE6',
+            '600': '#63c7e2',
+            '700': '#4ec0de',
+            '800': '#39b8da',
+            '900': '#27aed2',
+            'A100': '#fafdfe',
+            'A200': '#ffffff',
+            'A400': '#ffffff',
+            'A700': '#239cbc'
+        };
+        $mdThemingProvider
+            .definePalette('customPrimary',
+                customPrimary);
+
         $mdThemingProvider.theme('default')
-            .primaryPalette('blue-grey')
+            .primaryPalette('customPrimary')
             .accentPalette('red');
 
     }).run(($rootScope, $state, store) => {

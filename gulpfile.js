@@ -20,6 +20,7 @@ var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var cssNano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
+var jpegtran = require('imagemin-jpegtran');
 var templateCache = require('gulp-angular-templatecache');
 
 var ENV_PRODUCTION = args.env === 'production';
@@ -93,13 +94,13 @@ gulp.task('build:copy', function () {
     var fonts = gulp.src([
         'bower_components/roboto-fontface/fonts/*.{eot,ijmap,ttf,woff,woff2,svg}',
         'bower_components/material-design-icons/iconfont/*.{eot,ijmap,ttf,woff,woff2,svg}',
-        'app/src/assets/Hawcons/Font/Filled/fonts/*.{eot,svg,ttf,woff}'
+        'app/src/res/Hawcons/Font/Filled/fonts/*.{eot,svg,ttf,woff}'
     ])
         .pipe(gulp.dest(TARGET_DIR + '/fonts'));
 
     var styles = gulp.src([
         'bower_components/roboto-fontface/css/roboto-fontface.css',
-        'app/src/assets/Hawcons/Font/Filled/hawcons-icons.css',
+        'app/src/res/Hawcons/Font/Filled/hawcons-icons.css',
         'bower_components/angular-material/angular-material.css',
         'bower_components/angular-loading-bar/build/loading-bar.css',
         'bower_components/material-design-icons/iconfont/material-icons.css'
@@ -131,8 +132,17 @@ gulp.task('build:copy', function () {
     return merge(fonts, styles, scripts);
 });
 
+gulp.task('build:images', function () {
+    return gulp.src('./app/src/res/images/*.{jpg,png}')
+        .pipe(gulpif(ENV_PRODUCTION, imagemin({
+            progressive: true,
+            use: [jpegtran()]
+        })))
+        .pipe(gulp.dest(TARGET_DIR + '/images'));
+});
+
 gulp.task('build', ['build:scripts', 'build:strings', 'build:layouts', 'build:index', 'build:styles', 'build:config',
-    'build:copy']);
+    'build:copy', 'build:images']);
 
 gulp.task('watch', function () {
     gulp.watch([
