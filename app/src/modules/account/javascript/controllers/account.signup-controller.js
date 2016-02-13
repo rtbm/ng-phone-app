@@ -21,7 +21,7 @@ class AccountSignupController {
         }, (res) => {
             this.store.set('jwt', res.id_token);
             this.GlobalsService.user = this.jwtHelper.decodeToken(res.id_token);
-            this.$state.go('app.articles');
+            this.$state.go('app.dashboard');
 
         }, () => {
             this.error = true;

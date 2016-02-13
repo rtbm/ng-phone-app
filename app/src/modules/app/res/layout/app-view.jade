@@ -23,33 +23,23 @@
                     span(translate='APP.MENU.SIGNUP')
 
             md-menu-item(ng-show="AppVM.GlobalsService.user._id")
+                md-button(ui-sref='app.dashboard', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons person
+                    span(translate='APP.MENU.DASHBOARD')
+
+            md-menu-item(ng-show="AppVM.GlobalsService.user._id")
                 md-button(ui-sref='app.articles', ng-click='AppVM.toggleSidenav()')
                     md-icon(md-menu-align-target).material-icons edit
                     span(translate='APP.MENU.ARTICLES')
-
-            md-menu-item(ng-show="AppVM.GlobalsService.user._id")
-                md-button(ui-sref='app.account_settings', ng-click='AppVM.toggleSidenav()')
-                    md-icon(md-menu-align-target).material-icons settings
-                    span(translate='APP.MENU.SETTINGS')
-
-            md-menu-item
-                md-button(ui-sref='app.nfc_demo', ng-click='AppVM.toggleSidenav()')
-                    md-icon(md-menu-align-target).material-icons nfc
-                    span(translate='APP.MENU.NFC')
-
-            md-menu-item
-                md-button(ui-sref='app.camera_demo', ng-click='AppVM.toggleSidenav()')
-                    md-icon(md-menu-align-target).material-icons camera
-                    span(translate='APP.MENU.CAMERA')
-
-            md-menu-item
-                md-button(ui-sref='app.geolocation_demo', ng-click='AppVM.toggleSidenav()')
-                    md-icon(md-menu-align-target).material-icons gps_fixed
-                    span(translate='APP.MENU.GEOLOCATION')
 
             md-menu-item
                 md-button(ui-sref='app.weather', ng-click='AppVM.toggleSidenav()')
                     md-icon(md-menu-align-target).material-icons assistant
                     span(translate='APP.MENU.WEATHER')
+
+            md-menu-item(ng-show="AppVM.GlobalsService.user._id")
+                md-button(ui-sref='app.account_settings', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons settings
+                    span(translate='APP.MENU.SETTINGS')
 
     ui-view(layout-fill)

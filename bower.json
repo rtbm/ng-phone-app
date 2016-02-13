@@ -24,7 +24,7 @@
     "angular-sanitize": "latest",
     "angular-mocks": "latest",
     "angular-messages": "latest",
-    "angular-material": "^1.0.5",
+    "angular-material": "latest",
     "angular-translate": "latest",
     "angular-ui-router": "latest",
     "roboto-fontface": "latest",
