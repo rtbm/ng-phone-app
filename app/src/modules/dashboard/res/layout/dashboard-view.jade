@@ -1,11 +1,11 @@
-md-toolbar
+md-toolbar.toolbar-image
     .md-toolbar-tools
         md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
-        span(translate='APP.ARTICLES.ARTICLES')
+        span(translate='APP.DASHBOARD.DASHBOARD')
 
 md-content
     md-card(
-        ng-repeat="Article in ArticlesListVM.articles | orderBy: ['-pinned', 'name']"
+        ng-repeat="Article in DashboardVM.articles | orderBy: ['-pinned', 'name']"
     )
         md-card-title
             md-card-title-text
@@ -14,13 +14,13 @@ md-content
 
         md-card-content(layout='row', layout-align='space-between')
             img.md-media-xl.card-media(
-                ng-src="{{ArticlesListVM.Config.api}}/240x240/{{Article.image}}"
+                ng-src="{{DashboardVM.Config.api}}/240x240/{{Article.image}}"
                 alt='{{Article.name}}'
                 ui-sref='app.articles_detail({ articleId: Article._id })'
             )
             md-card-actions(layout='column')
                 md-button.md-icon-button.material-icons(
-                    ng-click='ArticlesListVM.togglePinned(Article)'
+                    ng-click='DashboardVM.togglePinned(Article)'
                 )
                     span(ng-show='!Article.pinned') favorite_border
                     span(ng-show='Article.pinned') favorite

@@ -10,7 +10,13 @@
       "DESCRIPTION": "Opis",
       "SAVE": "Zapisz",
       "SHOW": "Pokaż",
-      "SHOT_PHOTO": "Zrób fotkę"
+      "SHOT_PHOTO": "Zrób fotkę",
+      "NFC": {
+        "NOTIFY": {
+          "CONTENT": "Przyłóż telefon do taga NFC",
+          "CANCEL": "Anuluj"
+        }
+      }
     }
   }
 }

@@ -1,6 +1,5 @@
 function ArticlesRoutes ($stateProvider) {
     "ngInject";
-
     $stateProvider
         .state('app.articles', {
             url: '/articles',

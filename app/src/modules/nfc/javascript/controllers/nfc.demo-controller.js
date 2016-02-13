@@ -1,10 +1,10 @@
 class NfcDemoController {
-    constructor(NfcService) {
+    constructor(NfcService, DeviceService) {
         "ngInject";
-
         this.NfcService = NfcService;
+        this.DeviceService = DeviceService;
 
-        document.addEventListener('deviceready', () => {
+        this.DeviceService.ready().then(() => {
             this.NfcService.NdefListener().then((nfcEvent) => {
                 this.data = angular.toJson(nfcEvent);
 

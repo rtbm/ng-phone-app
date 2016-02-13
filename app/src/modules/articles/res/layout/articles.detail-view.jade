@@ -5,6 +5,7 @@ md-toolbar.toolbar-image(
         md-button.md-icon-button.material-icons(ui-sref='app.articles') arrow_back
         span(ng-bind='ArticlesDetailVM.Article.name')
         span(flex)
+        md-button.md-icon-button.material-icons(ng-click='ArticlesDetailVM.writeNfcTag(ArticlesDetailVM.Article)') nfc
         md-menu(md-position-mode='target-right target')
             md-button.md-icon-button.material-icons(ng-click='$mdOpenMenu($event)') more_vert
             md-menu-content(width='2')

@@ -10,7 +10,13 @@
       "DESCRIPTION": "Description",
       "SAVE": "Save",
       "SHOW": "Show",
-      "SHOT_PHOTO": "Shot photo"
+      "SHOT_PHOTO": "Shot photo",
+      "NFC": {
+        "NOTIFY": {
+          "CONTENT": "Stick phone to NFC tag",
+          "CANCEL": "Cancel"
+        }
+      }
     }
   }
 }

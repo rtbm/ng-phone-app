@@ -9,11 +9,17 @@ md-content(layout='column')
             md-card-header-text
                 md-title(translate='APP.ACCOUNT.SETTINGS')
 
-        md-card-content
+        md-card-content(layout='column')
+            md-input-container
+                label(translate='APP.ACCOUNT.NAME.FIRST')
+                input(type='text', ng-model='AccountSettingsVM.User.name.first')
+            md-input-container
+                label(translate='APP.ACCOUNT.NAME.LAST')
+                input(type='text', ng-model='AccountSettingsVM.User.name.last')
 
         md-card-actions(layout='row', layout-align='end center')
             md-button.md-primary(
-                ng-click='AccountSettingsVM.submit(AccountSettingsVM.User)'
+                ng-click='AccountSettingsVM.update(AccountSettingsVM.User)'
                 ng-disabled='!AccountSettingsVM.ngForm.$valid'
                 translate="APP.ACCOUNT.UPDATE"
             )

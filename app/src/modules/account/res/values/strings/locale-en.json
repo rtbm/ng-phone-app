@@ -5,9 +5,17 @@
       "SIGNUP": "Sign up",
       "EMAIL": "E-mail",
       "PASSWORD": "Password",
-      "SETTINGS": "Settings",
+      "SETTINGS": "Account settings",
       "AVATAR": "Avatar",
-      "UPDATE": "Update"
+      "NAME": {
+        "FIRST": "First Name",
+        "LAST": "Last Name"
+      },
+      "UPDATE": "Update",
+      "CONFIRMATION": {
+        "CONTENT": "Your account was updated.",
+        "OK": "OK"
+      }
     }
   }
 }

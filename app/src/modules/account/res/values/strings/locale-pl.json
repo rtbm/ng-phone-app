@@ -5,9 +5,17 @@
       "SIGNUP": "Zapisz się",
       "EMAIL": "E-mail",
       "PASSWORD": "Hasło",
-      "SETTINGS": "Ustawienia",
+      "SETTINGS": "Ustawienia konta",
       "AVATAR": "Zdjęcie profilowe",
-      "UPDATE": "Zaaktualizuj"
+      "NAME": {
+        "FIRST": "Imię",
+        "LAST": "Nazwisko"
+      },
+      "UPDATE": "Zaaktualizuj",
+      "CONFIRMATION": {
+        "CONTENT": "Twoje konto zostało zaaktualizowane.",
+        "OK": "OK"
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-class ArticlesListController {
+class DashboardController {
     constructor ($http, Config, Articles) {
         "ngInject";
         this.$http = $http;
@@ -16,4 +16,4 @@ class ArticlesListController {
     }
 }
 
-export { ArticlesListController };
+export { DashboardController };

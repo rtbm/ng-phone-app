@@ -1,11 +1,12 @@
 class CameraDemoController {
-    constructor(CameraService) {
+    constructor(CameraService, DeviceService) {
         "ngInject";
         this.CameraService = CameraService;
+        this.DeviceService = DeviceService;
     }
 
     getPicture () {
-        document.addEventListener('deviceready', () => {
+        this.DeviceService.ready().then(() => {
             this.CameraService.getPicture({
                 destinationType: Camera.DestinationType.DATA_URL,
                 correctOrientation: true,

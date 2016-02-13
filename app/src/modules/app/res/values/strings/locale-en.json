@@ -8,7 +8,7 @@
       "CAMERA": "Camera - DEMO",
       "GEOLOCATION": "Geolocation - DEMO",
       "WEATHER": "Weather",
-      "SETTINGS": "Settings"
+      "SETTINGS": "Profile settings"
     },
     "VALIDATION": {
       "REQUIRED": "You did not enter a field",

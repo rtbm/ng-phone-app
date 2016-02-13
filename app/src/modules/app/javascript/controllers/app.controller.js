@@ -1,7 +1,7 @@
 class AppController {
-    constructor($mdSidenav, store) {
+    constructor($mdSidenav, GlobalsService) {
         "ngInject";
-        this.store = store;
+        this.GlobalsService = GlobalsService;
         this.$mdSidenav = $mdSidenav;
     }
 

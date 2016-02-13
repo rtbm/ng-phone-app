@@ -1,9 +1,11 @@
 class AccountSignupController {
-    constructor (Account, $state, store) {
+    constructor ($state, store, jwtHelper, GlobalsService, Account) {
         "ngInject";
-        this.Account = Account;
         this.$state = $state;
         this.store = store;
+        this.jwtHelper = jwtHelper;
+        this.GlobalsService = GlobalsService;
+        this.Account = Account;
 
         this.User = {
             email: '',
@@ -18,6 +20,7 @@ class AccountSignupController {
 
         }, (res) => {
             this.store.set('jwt', res.id_token);
+            this.GlobalsService.user = this.jwtHelper.decodeToken(res.id_token);
             this.$state.go('app.articles');
 
         }, () => {

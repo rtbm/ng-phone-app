@@ -1,15 +1,15 @@
 class GeolocationDemoController {
-    constructor(GeolocationService) {
+    constructor(GeolocationService, DeviceService) {
         "ngInject";
-
         this.GeolocationService = GeolocationService;
+        this.DeviceService = DeviceService;
 
-        document.addEventListener('deviceready', () => {
+        this.DeviceService.ready().then(() => {
             this.GeolocationService.watchPosition({
                 timeout: 3000,
                 enableHighAccuracy: true
-            }).then(null, () => {
-                console.log('[GEOLOCATION] ERROR');
+            }).then(null, (err) => {
+                console.log('[GEOLOCATION] ERROR', err);
             }, (position) => {
                 this.data = angular.toJson({ lat: position.coords.latitude, long: position.coords.longitude });
             });

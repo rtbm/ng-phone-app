@@ -24,12 +24,12 @@
     "angular-sanitize": "latest",
     "angular-mocks": "latest",
     "angular-messages": "latest",
-    "angular-material": "latest",
+    "angular-material": "^1.0.5",
     "angular-translate": "latest",
-    "angular-ui-router": "ui-router#~0.2.17",
-    "roboto-fontface": "~0.4.3",
-    "material-design-icons": "^2.1.3",
-    "angular-jwt": "^0.0.9",
-    "a0-angular-storage": "^0.0.13"
+    "angular-ui-router": "latest",
+    "roboto-fontface": "latest",
+    "material-design-icons": "latest",
+    "angular-jwt": "latest",
+    "a0-angular-storage": "latest"
   }
 }

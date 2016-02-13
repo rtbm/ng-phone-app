@@ -5,6 +5,7 @@ import * as ngPhoneGeolocation from './modules/geolocation';
 import * as ngPhoneAccount from './modules/account';
 import * as ngPhoneArticles from './modules/articles';
 import * as ngPhoneWeather from './modules/weather';
+import * as ngPhoneDashboard from './modules/dashboard';
 
 angular.module('ngPhone', [
     'ngAnimate',
@@ -27,9 +28,10 @@ angular.module('ngPhone', [
     'ngPhone.geolocation',
     'ngPhone.account',
     'ngPhone.articles',
-    'ngPhone.weather'
+    'ngPhone.weather',
+    'ngPhone.dashboard'
 
 ]).config(($urlRouterProvider) => {
-    $urlRouterProvider.otherwise('/app/weather');
+    $urlRouterProvider.otherwise('/app/dashboard');
 
 });
