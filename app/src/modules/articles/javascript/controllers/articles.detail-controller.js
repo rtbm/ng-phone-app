@@ -46,9 +46,6 @@ class ArticlesDetailController {
                     .then(() => {
                         this.NfcService.NdefListener().cancel();
                         this.$mdDialog.hide(notifyDialog);
-
-                    }, (err) => {
-                        console.log('[NFC] ERROR', err);
                     });
             });
     }

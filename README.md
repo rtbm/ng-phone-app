@@ -2,6 +2,18 @@
 
 ng-material with Cordova
 
+### Browser Preview
+
+http://rtbm.space:8888
+
+```
+login: root@localhost
+password: toor
+```
+
+### API
+https://github.com/rtbm/node-rest-api
+
 ### Development
 
 ```shell

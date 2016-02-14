@@ -1,13 +1,20 @@
 class DashboardController {
-    constructor ($http, Config, DeviceService, GeolocationService, WeatherService, Articles) {
+    constructor ($http, $q, $state, $translate, $mdDialog, Config, DeviceService, GeolocationService, WeatherService,
+                 NfcService, Articles) {
         "ngInject";
         this.$http = $http;
+        this.$q = $q;
+        this.$state = $state;
+        this.$translate = $translate;
+        this.$mdDialog = $mdDialog;
         this.Config = Config;
         this.DeviceService = DeviceService;
         this.GeolocationService = GeolocationService;
         this.WeatherService = WeatherService;
+        this.NfcService = NfcService;
+        this.Articles = Articles;
 
-        this.articles = Articles.query();
+        this.articles = this.Articles.query();
 
         this.DeviceService.ready().then(() => {
             let geolocation = this.GeolocationService.getCurrentPosition({
@@ -34,6 +41,43 @@ class DashboardController {
         }).then((res) => {
             Article.pinned = res.data.pinned;
         });
+    }
+
+    readNfcNotifyDialog () {
+        let q = this.$q.defer();
+
+        this.$translate(['APP.ARTICLES.NFC.NOTIFY.CONTENT', 'APP.ARTICLES.NFC.NOTIFY.CANCEL']).then((translations) => {
+            let notifyDialog = this.$mdDialog.confirm()
+                .textContent(translations['APP.ARTICLES.NFC.NOTIFY.CONTENT'])
+                .ok(translations['APP.ARTICLES.NFC.NOTIFY.CANCEL']);
+
+            q.resolve(notifyDialog);
+        });
+
+        return q.promise;
+    }
+
+    readNfcTag () {
+        this.DeviceService.ready()
+            .then(() => {
+                return this.readNfcNotifyDialog();
+            })
+            .then((notifyDialog) => {
+                this.$mdDialog.show(notifyDialog);
+
+                this.NfcService.NdefListener().then((nfcEvent) => {
+                    this.$mdDialog.hide(notifyDialog);
+
+                    let payload = nfcEvent.tag.ndefMessage[0].payload;
+                    let id = ndef.textHelper.decodePayload(payload);
+
+                    this.Articles.get({ articleId: id }, () => {
+                        this.$state.go('app.articles_detail', {
+                            articleId: id
+                        });
+                    });
+                });
+            });
     }
 }
 
