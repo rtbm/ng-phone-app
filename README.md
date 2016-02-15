@@ -17,6 +17,10 @@ https://github.com/rtbm/node-rest-api
 ### Development
 
 ```shell
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
+```shell
 $ su -c'npm -g install gulp bower'
 $ npm start
 ```

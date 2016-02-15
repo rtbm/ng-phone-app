@@ -6,12 +6,19 @@
       "DASHBOARD": "Dashboard",
       "ARTICLES": "Collection",
       "WEATHER": "Weather",
+      "TIMER": "Timer",
       "SETTINGS": "Profile settings"
     },
     "VALIDATION": {
       "REQUIRED": "You did not enter a field",
       "EMAIL": "E-mail address is incorrect",
       "FAIL": "Sorry that didn't work. Please try again."
+    },
+    "NOTIFICATIONS": {
+      "BACKGROUND": {
+        "TITLE": "ngPhoneApp",
+        "TEXT": "running in background"
+      }
     }
   }
 }

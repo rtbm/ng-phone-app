@@ -52,8 +52,19 @@ export default angular.module('ngPhone.app', [])
             .primaryPalette('customPrimary')
             .accentPalette('red');
 
-    }).run(($rootScope, $state, store) => {
+    }).run(($rootScope, $state, $translate, store, DeviceService) => {
         "ngInject";
+        DeviceService.ready().then(() => {
+            $translate(['APP.NOTIFICATIONS.BACKGROUND.TITLE',
+                'APP.NOTIFICATIONS.BACKGROUND.TEXT']).then((translations) => {
+                cordova.plugins.backgroundMode.setDefaults({
+                    title: translations['APP.NOTIFICATIONS.BACKGROUND.TITLE'],
+                    text: translations['APP.NOTIFICATIONS.BACKGROUND.TEXT']
+                });
+                cordova.plugins.backgroundMode.enable();
+            });
+        });
+        
         $rootScope.$on('$stateChangeStart', (event, toState) => {
             if (!store.get('jwt') && !(toState.data && toState.data.notProtected)) {
                 event.preventDefault();

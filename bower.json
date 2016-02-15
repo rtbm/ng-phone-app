@@ -20,7 +20,6 @@
     "angular-animate": "latest",
     "angular-loading-bar": "latest",
     "angular-resource": "latest",
-    "angular-route": "latest",
     "angular-sanitize": "latest",
     "angular-mocks": "latest",
     "angular-messages": "latest",

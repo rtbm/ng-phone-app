@@ -1,8 +1,9 @@
-import * as ngPhoneApp from './modules/app';
-import * as ngPhoneAccount from './modules/account';
-import * as ngPhoneArticles from './modules/articles';
-import * as ngPhoneWeather from './modules/weather';
-import * as ngPhoneDashboard from './modules/dashboard';
+import './modules/app';
+import './modules/account';
+import './modules/articles';
+import './modules/weather';
+import './modules/dashboard';
+import './modules/timer';
 
 angular.module('ngPhone', [
     'ngAnimate',
@@ -23,9 +24,9 @@ angular.module('ngPhone', [
     'ngPhone.account',
     'ngPhone.articles',
     'ngPhone.weather',
-    'ngPhone.dashboard'
+    'ngPhone.dashboard',
+    'ngPhone.timer'
 
 ]).config(($urlRouterProvider) => {
     $urlRouterProvider.otherwise('/app/dashboard');
-
 });

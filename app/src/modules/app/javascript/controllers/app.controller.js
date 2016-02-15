@@ -1,8 +1,9 @@
 class AppController {
-    constructor($mdSidenav, GlobalsService) {
+    constructor($mdSidenav, GlobalsService, TimerService) {
         "ngInject";
         this.GlobalsService = GlobalsService;
         this.$mdSidenav = $mdSidenav;
+        this.TimerService = TimerService;
     }
 
     toggleSidenav () {
