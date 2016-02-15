@@ -45,7 +45,7 @@ class TimerService {
     
     reset () {
         this.stop();
-        this.counted = 0;
+        this.countedFormatted = ['00','00','00'];
     }
 }
 
