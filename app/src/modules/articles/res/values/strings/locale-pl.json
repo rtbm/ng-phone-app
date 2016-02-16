@@ -2,6 +2,7 @@
   "APP": {
     "ARTICLES": {
       "ARTICLES": "Kolekcja",
+      "SEARCH": "Szukaj",
       "CREATE": "Stwórz",
       "EDIT": "Edytuj",
       "UPDATE": "Zaaktualizuj",

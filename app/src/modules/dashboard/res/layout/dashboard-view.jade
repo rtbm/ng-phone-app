@@ -1,7 +1,20 @@
 md-toolbar.toolbar-image.toolbar-dashboard
-    .md-toolbar-tools
+    .md-toolbar-tools(ng-hide='DashboardVM.searchBox')
         md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
         span(translate='APP.DASHBOARD.DASHBOARD')
+        span(flex)
+        md-button.md-icon-button.material-icons(ng-click='DashboardVM.searchBox=true') search
+        
+    .md-toolbar-tools.toolbar-search(ng-show='DashboardVM.searchBox')
+        md-button.md-icon-button.material-icons(
+            ng-click="DashboardVM.searchBox=false;DashboardVM.search=''"
+        ) arrow_back            
+        input(
+            ng-model='DashboardVM.search'
+            placeholder="{{ 'APP.ARTICLES.SEARCH' | translate }}"
+            type='text'
+            flex='100'
+        )
 
     .toolbar-panel(ng-show='DashboardVM.weather')
         .md-subhead
@@ -16,7 +29,7 @@ md-toolbar.toolbar-image.toolbar-dashboard
 
 md-content
     md-card(
-        ng-repeat="Article in DashboardVM.articles | orderBy: ['-pinned', 'name']"
+        ng-repeat="Article in DashboardVM.articles | orderBy: ['-pinned', 'name'] | filter: DashboardVM.search"
     )
         md-card-title
             md-card-title-text
