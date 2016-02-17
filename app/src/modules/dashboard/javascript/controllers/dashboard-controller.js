@@ -1,12 +1,13 @@
 class DashboardController {
-    constructor ($http, $q, $state, $translate, $mdDialog, Config, DeviceService, GeolocationService, WeatherService,
-                 NfcService, Articles) {
+    constructor($http, $q, $state, $translate, $mdDialog, $scope, Config, DeviceService, GeolocationService,
+        WeatherService, NfcService, Articles) {
         "ngInject";
         this.$http = $http;
         this.$q = $q;
         this.$state = $state;
         this.$translate = $translate;
         this.$mdDialog = $mdDialog;
+        this.$scope = $scope;
         this.Config = Config;
         this.DeviceService = DeviceService;
         this.GeolocationService = GeolocationService;
@@ -32,6 +33,19 @@ class DashboardController {
                 });
             });
         });
+
+        let setToolbar = () => {
+            let container = document.getElementById('container');
+            let header = document.getElementById('header');
+
+            angular.element(container).bind('scroll', () => {
+                let bounds = header.getBoundingClientRect();
+                this.scrolled = bounds.top < 0;
+                this.$scope.$apply();
+            });
+        }
+
+        setToolbar();
     }
 
     togglePinned (Article) {

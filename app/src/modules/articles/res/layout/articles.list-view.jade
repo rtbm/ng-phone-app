@@ -8,7 +8,7 @@ md-toolbar
     .md-toolbar-tools.toolbar-search(ng-show='ArticlesListVM.searchBox')
         md-button.md-icon-button.material-icons(
             ng-click="ArticlesListVM.searchBox=false;ArticlesListVM.search=''"
-        ) arrow_back            
+        ) arrow_back
         input(
             ng-model='ArticlesListVM.search'
             placeholder="{{ 'APP.ARTICLES.SEARCH' | translate }}"
@@ -16,27 +16,26 @@ md-toolbar
             flex='100'
         )
 
-md-content   
-    md-content.md-padding
-        md-card(
-            ng-repeat="Article in ArticlesListVM.articles | orderBy: ['-pinned', 'name'] | filter: ArticlesListVM.search"
-        )
-            md-card-title
-                md-card-title-text
-                    span.md-headline(ng-bind='Article.name', ui-sref='app.articles_detail({ articleId: Article._id })')
-                    span.md-subhead(ng-bind='Article.description')
+md-content.md-padding
+    md-card(
+        ng-repeat="Article in ArticlesListVM.articles | orderBy: ['-pinned', 'name'] | filter: ArticlesListVM.search"
+    )
+        md-card-title
+            md-card-title-text
+                span.md-headline(ng-bind='Article.name', ui-sref='app.articles_detail({ articleId: Article._id })')
+                span.md-subhead(ng-bind='Article.description')
 
-            md-card-content(layout='row', layout-align='space-between')
-                img.md-media-xl.card-media(
-                    ng-src="{{ArticlesListVM.Config.api}}/240x240/{{Article.image}}"
-                    alt='{{Article.name}}'
-                    ui-sref='app.articles_detail({ articleId: Article._id })'
+        md-card-content(layout='row', layout-align='space-between')
+            img.md-media-xl.card-media(
+                ng-src="{{ArticlesListVM.Config.api}}/240x240/{{Article.image}}"
+                alt='{{Article.name}}'
+                ui-sref='app.articles_detail({ articleId: Article._id })'
+            )
+            md-card-actions(layout='column')
+                md-button.md-icon-button.material-icons(
+                    ng-click='ArticlesListVM.togglePinned(Article)'
                 )
-                md-card-actions(layout='column')
-                    md-button.md-icon-button.material-icons(
-                        ng-click='ArticlesListVM.togglePinned(Article)'
-                    )
-                        span(ng-show='!Article.pinned') favorite_border
-                        span(ng-show='Article.pinned') favorite
+                    span(ng-show='!Article.pinned') favorite_border
+                    span(ng-show='Article.pinned') favorite
 
-    md-button.md-fab.md-fab-bottom-right.material-icons(ui-sref='app.articles_create') add
+md-button.md-fab.md-fab-bottom-right.material-icons(ui-sref='app.articles_create') add

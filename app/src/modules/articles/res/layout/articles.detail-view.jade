@@ -1,6 +1,4 @@
-md-toolbar.toolbar-image(
-    style='background-image:url({{ArticlesDetailVM.Article.image}})'
-)
+md-toolbar(ng-class="{'transparent': !ArticlesDetailVM.scrolled}")
     .md-toolbar-tools
         md-button.md-icon-button.material-icons(ui-sref='app.articles') arrow_back
         span(ng-bind='ArticlesDetailVM.Article.name')
@@ -19,6 +17,8 @@ md-toolbar.toolbar-image(
                     md-button()
                         md-icon(md-menu-align-target).material-icons remove
                         span(translate='APP.ARTICLES.REMOVE')
+
+.header#header(style='background-image:url({{ArticlesDetailVM.Article.image}})')
 
 md-content
     md-card

@@ -1,14 +1,14 @@
-md-toolbar.toolbar-image.toolbar-dashboard
+md-toolbar(ng-class="{'transparent': !DashboardVM.scrolled}")
     .md-toolbar-tools(ng-hide='DashboardVM.searchBox')
         md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
         span(translate='APP.DASHBOARD.DASHBOARD')
         span(flex)
         md-button.md-icon-button.material-icons(ng-click='DashboardVM.searchBox=true') search
-        
+
     .md-toolbar-tools.toolbar-search(ng-show='DashboardVM.searchBox')
         md-button.md-icon-button.material-icons(
             ng-click="DashboardVM.searchBox=false;DashboardVM.search=''"
-        ) arrow_back            
+        ) arrow_back
         input(
             ng-model='DashboardVM.search'
             placeholder="{{ 'APP.ARTICLES.SEARCH' | translate }}"
@@ -16,7 +16,8 @@ md-toolbar.toolbar-image.toolbar-dashboard
             flex='100'
         )
 
-    .toolbar-panel(ng-show='DashboardVM.weather')
+.header.header-dashboard#header
+    .header-panel(ng-show='DashboardVM.weather')
         .md-subhead
             span(ng-bind='DashboardVM.weather.description')
             | &nbsp;(

@@ -64,7 +64,7 @@ export default angular.module('ngPhone.app', [])
                 cordova.plugins.backgroundMode.enable();
             });
         });
-        
+
         $rootScope.$on('$stateChangeStart', (event, toState) => {
             if (!store.get('jwt') && !(toState.data && toState.data.notProtected)) {
                 event.preventDefault();

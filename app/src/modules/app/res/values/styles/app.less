@@ -9,6 +9,35 @@ body {
   display: none;
 }
 
+.content {
+  .header {
+    max-height: 320px;
+    height: 320px;
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    .header-panel {
+      padding: 0 24px;
+      position: absolute;
+      bottom: 10px;
+    }
+    & + md-content {
+      padding: 10px 0 0 0;
+    }
+  }
+  md-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: .2s background linear;
+  }
+  md-content {
+    padding: 64px 0 0 0;
+  }
+}
+
 md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
   color: #fff;
   background-color: #3C3C3C;
@@ -20,6 +49,9 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
       color: #8C8C8C !important;
     }
   }
+  &.transparent {
+      background-color: transparent;
+  }
 }
 
 .md-toolbar-tools.toolbar-search {
@@ -28,7 +60,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
     input[type=text] {
         border: 0 none;
         outline: 0;
-    }    
+    }
     .md-errors-spacer {
         display: none;
     }
@@ -37,18 +69,4 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 .container {
   max-height: 100%;
   overflow-y: scroll;
-}
-
-.toolbar-image {
-  max-height: 320px;
-  height: 320px;
-  background-size: 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-
-.toolbar-panel {
-  padding: 0 24px;
-  position: absolute;
-  bottom: 10px;
 }

@@ -1,10 +1,12 @@
 class ArticlesDetailController {
-    constructor ($translate, $mdDialog, $stateParams, $q, Config, NfcService, DeviceService, GlobalsService, Articles) {
+    constructor($translate, $mdDialog, $stateParams, $q, $scope, Config, NfcService, DeviceService,
+        GlobalsService, Articles) {
         "ngInject";
         this.$translate = $translate;
         this.$mdDialog = $mdDialog;
         this.$stateParams = $stateParams;
         this.$q = $q;
+        this.$scope = $scope;
         this.Config = Config;
         this.NfcService = NfcService;
         this.DeviceService = DeviceService;
@@ -15,6 +17,19 @@ class ArticlesDetailController {
             this.Article = Article;
             this.Article.image = this.Config.api + '/' + this.Article.image;
         });
+
+        let setToolbar = () => {
+            let container = document.getElementById('container');
+            let header = document.getElementById('header');
+
+            angular.element(container).bind('scroll', () => {
+                let bounds = header.getBoundingClientRect();
+                this.scrolled = bounds.top < 0;
+                this.$scope.$apply();
+            });
+        }
+
+        setToolbar();
     }
 
     WriteNfcNotifyDialog () {
