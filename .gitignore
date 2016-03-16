@@ -1,0 +1,9 @@
+.idea/
+node_modules
+app/build/
+app/dist/
+bower_components/
+*.log
+www/
+platforms/
+plugins/

@@ -1,0 +1,23 @@
+{
+  "APP": {
+    "ARTICLES": {
+      "ARTICLES": "Collection",
+      "SEARCH": "Search",
+      "CREATE": "Create",
+      "EDIT": "Edit",
+      "UPDATE": "Update",
+      "REMOVE": "Remove",
+      "NAME": "Name",
+      "DESCRIPTION": "Description",
+      "SAVE": "Save",
+      "SHOW": "Show",
+      "SHOT_PHOTO": "Shot photo",
+      "NFC": {
+        "NOTIFY": {
+          "CONTENT": "Stick phone to NFC tag",
+          "CANCEL": "Cancel"
+        }
+      }
+    }
+  }
+}

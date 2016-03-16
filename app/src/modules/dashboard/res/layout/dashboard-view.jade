@@ -1,0 +1,53 @@
+md-toolbar(ng-class="{'transparent': !DashboardVM.scrolled}")
+    .md-toolbar-tools(ng-hide='DashboardVM.searchBox')
+        md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
+        span(translate='APP.DASHBOARD.DASHBOARD')
+        span(flex)
+        md-button.md-icon-button.material-icons(ng-click='DashboardVM.searchBox=true') search
+
+    .md-toolbar-tools.toolbar-search(ng-show='DashboardVM.searchBox')
+        md-button.md-icon-button.material-icons(
+            ng-click="DashboardVM.searchBox=false;DashboardVM.search=''"
+        ) arrow_back
+        input(
+            ng-model='DashboardVM.search'
+            placeholder="{{ 'APP.ARTICLES.SEARCH' | translate }}"
+            type='text'
+            flex='100'
+        )
+
+.header.header-dashboard#header
+    .header-panel(ng-show='DashboardVM.weather')
+        .md-subhead
+            span(ng-bind='DashboardVM.weather.description')
+            | &nbsp;(
+            span(ng-bind='DashboardVM.weather.wind.speed')
+            | m/s)
+
+        .md-display-2
+            span(ng-bind='DashboardVM.weather.temp')
+            |&deg;C
+
+md-content
+    md-card(
+        ng-repeat="Article in DashboardVM.articles | orderBy: ['-pinned', 'name'] | filter: DashboardVM.search"
+    )
+        md-card-title
+            md-card-title-text
+                span.md-headline(ng-bind='Article.name', ui-sref='app.articles_detail({ articleId: Article._id })')
+                span.md-subhead(ng-bind='Article.description')
+
+        md-card-content(layout='row', layout-align='space-between')
+            img.md-media-xl.card-media(
+                ng-src="{{DashboardVM.Config.api}}/240x240/{{Article.image}}"
+                alt='{{Article.name}}'
+                ui-sref='app.articles_detail({ articleId: Article._id })'
+            )
+            md-card-actions(layout='column')
+                md-button.md-icon-button.material-icons(
+                    ng-click='DashboardVM.togglePinned(Article)'
+                )
+                    span(ng-show='!Article.pinned') favorite_border
+                    span(ng-show='Article.pinned') favorite
+
+   md-button.md-fab.md-fab-bottom-right.material-icons(ng-click='DashboardVM.readNfcTag()') nfc

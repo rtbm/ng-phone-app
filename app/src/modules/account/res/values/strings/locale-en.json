@@ -1,0 +1,21 @@
+{
+  "APP": {
+    "ACCOUNT": {
+      "SIGNIN": "Sign in",
+      "SIGNUP": "Sign up",
+      "EMAIL": "E-mail",
+      "PASSWORD": "Password",
+      "SETTINGS": "Account settings",
+      "AVATAR": "Avatar",
+      "NAME": {
+        "FIRST": "First Name",
+        "LAST": "Last Name"
+      },
+      "UPDATE": "Update",
+      "CONFIRMATION": {
+        "CONTENT": "Your account was updated.",
+        "OK": "OK"
+      }
+    }
+  }
+}

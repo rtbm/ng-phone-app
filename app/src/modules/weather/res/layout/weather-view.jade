@@ -1,0 +1,72 @@
+md-toolbar
+    .md-toolbar-tools
+        md-button.md-icon-button.material-icons(ng-click='AppVM.toggleSidenav()') menu
+        span(translate='APP.WEATHER.WEATHER')
+
+md-content(ng-show='WeatherVM.weather')
+    md-list
+        md-list-item
+            .md-list-item-text(layout='column')
+                h2(ng-bind='WeatherVM.weather.description')
+
+        md-list-item.md-2-line
+            i.md-avatar-icon.hawcons-icon-69-thermometer-half
+            .md-list-item-text(layout='column')
+                h3(translate='APP.WEATHER.TEMPERATURE')
+                p
+                    span(ng-bind='WeatherVM.weather.temp')
+                    span &deg;C
+
+        md-list-item.md-2-line
+            i.md-avatar-icon.hawcons-icon-52-barometer
+            .md-list-item-text(layout='column')
+                h3(translate='APP.WEATHER.PRESSURE')
+                p
+                    span(ng-bind='WeatherVM.weather.pressure')
+                    span hPa
+
+        md-list-item.md-2-line
+            i.md-avatar-icon.hawcons-icon-40-clouds
+            .md-list-item-text(layout='column')
+                h3(translate='APP.WEATHER.CLOUDS')
+                p
+                    span(ng-bind='WeatherVM.weather.clouds')
+                    span %
+
+        md-list-item.md-2-line
+            i.md-avatar-icon.hawcons-icon-30-sunrise
+            .md-list-item-text(layout='column')
+                h3(translate='APP.WEATHER.SUNRISE')
+                p
+                    span(ng-bind="WeatherVM.weather.sunrise | date: 'HH:mm'")
+
+        md-list-item.md-2-line
+            i.md-avatar-icon.md-avatar-icon.hawcons-icon-31-sunset
+            .md-list-item-text(layout='column')
+                h3(translate='APP.WEATHER.SUNSET')
+                p
+                    span(ng-bind="WeatherVM.weather.sunset | date: 'HH:mm'")
+
+        md-list-item.md-2-line(ng-show='WeatherVM.weather.rain')
+            i.md-avatar-icon.hawcons-icon-36-raindrops
+            .md-list-item-text(layout='column')
+                h3(translate='APP.WEATHER.RAIN')
+                p
+                    span(ng-bind="WeatherVM.weather.rain['3h']")
+
+        md-list-item.md-2-line(ng-show='WeatherVM.weather.snow')
+            i.md-avatar-icon.hawcons-icon-74-snowflake
+            .md-list-item-text(layout='column')
+                h3(translate='APP.WEATHER.SNOW')
+                p
+                    span(ng-bind="WeatherVM.weather.snow['3h']")
+
+        md-list-item.md-2-line
+            i.md-avatar-icon.hawcons-icon-43-wind
+            .md-list-item-text(layout='column')
+                h3(translate='APP.WEATHER.WIND')
+                p
+                    span(ng-bind='WeatherVM.weather.wind.deg')
+                    | &deg; (
+                    span(ng-bind='WeatherVM.weather.wind.speed')
+                    | &nbsp;m/s)

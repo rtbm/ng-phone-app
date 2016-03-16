@@ -1,0 +1,15 @@
+{
+  "APP": {
+    "WEATHER": {
+      "WEATHER": "Pogoda",
+      "TEMPERATURE": "Temperatura",
+      "PRESSURE": "Ciśnienie",
+      "CLOUDS": "Zachmurzenie",
+      "SUNRISE": "Wschód słońca",
+      "SUNSET": "Zachód słońca",
+      "RAIN": "Opady deszczu",
+      "SNOW": "Opady śniegu",
+      "WIND": "Wiatr"
+    }
+  }
+}

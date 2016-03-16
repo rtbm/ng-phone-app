@@ -1,0 +1,21 @@
+{
+  "APP": {
+    "ACCOUNT": {
+      "SIGNIN": "Zaloguj się",
+      "SIGNUP": "Zapisz się",
+      "EMAIL": "E-mail",
+      "PASSWORD": "Hasło",
+      "SETTINGS": "Ustawienia konta",
+      "AVATAR": "Zdjęcie profilowe",
+      "NAME": {
+        "FIRST": "Imię",
+        "LAST": "Nazwisko"
+      },
+      "UPDATE": "Zaaktualizuj",
+      "CONFIRMATION": {
+        "CONTENT": "Twoje konto zostało zaaktualizowane.",
+        "OK": "OK"
+      }
+    }
+  }
+}

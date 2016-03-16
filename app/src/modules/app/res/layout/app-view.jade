@@ -1,0 +1,53 @@
+#container.container
+    md-sidenav.md-sidenav-left(md-component-id='sidenav')
+        md-toolbar
+            md-list
+                md-list-item.md-2-line
+                    md-icon.md-avatar-icon person
+                    .md-list-item-text
+                        h3
+                            span(ng-bind='AppVM.GlobalsService.user.name.first')
+                            | &nbsp;
+                            span(ng-bind='AppVM.GlobalsService.user.name.last')
+                        p(ng-bind='AppVM.GlobalsService.user.email')
+
+
+        md-menu-content
+            md-menu-item(ng-show="!AppVM.GlobalsService.user._id")
+                md-button(ui-sref='app.account_signin', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons person
+                    span(translate='APP.MENU.SIGNIN')
+
+            md-menu-item(ng-show="!AppVM.GlobalsService.user._id")
+                md-button(ui-sref='app.account_signup', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons person_add
+                    span(translate='APP.MENU.SIGNUP')
+
+            md-menu-item(ng-show="AppVM.GlobalsService.user._id")
+                md-button(ui-sref='app.dashboard', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons person
+                    span(translate='APP.MENU.DASHBOARD')
+
+            md-menu-item(ng-show="AppVM.GlobalsService.user._id")
+                md-button(ui-sref='app.articles', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons edit
+                    span(translate='APP.MENU.ARTICLES')
+
+            md-menu-item
+                md-button(ui-sref='app.weather', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons assistant
+                    span(translate='APP.MENU.WEATHER')
+
+            md-menu-item
+                md-button(ui-sref='app.timer', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons
+                        span(ng-show='AppVM.TimerService.enabled') timer
+                        span(ng-hide='AppVM.TimerService.enabled') timer_off
+                    span(translate='APP.MENU.TIMER')
+
+            md-menu-item(ng-show="AppVM.GlobalsService.user._id")
+                md-button(ui-sref='app.account_settings', ng-click='AppVM.toggleSidenav()')
+                    md-icon(md-menu-align-target).material-icons settings
+                    span(translate='APP.MENU.SETTINGS')
+
+    ui-view.content(layout-fill)

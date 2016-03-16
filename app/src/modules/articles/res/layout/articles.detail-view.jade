@@ -1,0 +1,28 @@
+md-toolbar(ng-class="{'transparent': !ArticlesDetailVM.scrolled}")
+    .md-toolbar-tools
+        md-button.md-icon-button.material-icons(ui-sref='app.articles') arrow_back
+        span(ng-bind='ArticlesDetailVM.Article.name')
+        span(flex)
+        md-button.md-icon-button.material-icons(ng-click='ArticlesDetailVM.writeNfcTag(ArticlesDetailVM.Article)') nfc
+        md-menu(md-position-mode='target-right target')
+            md-button.md-icon-button.material-icons(ng-click='$mdOpenMenu($event)') more_vert
+            md-menu-content(width='2')
+                md-menu-item
+                    md-button(
+                        ui-sref='app.articles_edit({ articleId: ArticlesDetailVM.Article._id })'
+                    )
+                        md-icon(md-menu-align-target).material-icons edit
+                        span(translate='APP.ARTICLES.EDIT')
+                md-menu-item
+                    md-button()
+                        md-icon(md-menu-align-target).material-icons remove
+                        span(translate='APP.ARTICLES.REMOVE')
+
+.header#header(style='background-image:url({{ArticlesDetailVM.Article.image}})')
+
+md-content
+    md-card
+        md-card-title
+            md-card-title-text
+                span.md-headline(ng-bind='ArticlesDetailVM.Article.name')
+                span.md-subhead(ng-bind='ArticlesDetailVM.Article.description')

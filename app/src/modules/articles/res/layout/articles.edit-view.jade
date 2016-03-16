@@ -1,0 +1,48 @@
+md-toolbar
+    .md-toolbar-tools
+        md-button.md-icon-button.material-icons(ui-sref='app.articles') arrow_back
+        span(translate='APP.ARTICLES.EDIT')
+
+md-content
+    md-card(ng-form='ArticlesEditVM.ngForm')
+        md-card-header
+            md-card-header-text
+                md-title(translate='APP.ARTICLES.EDIT')
+
+        md-card-content(layout='column')
+            md-input-container
+                label(translate='APP.ARTICLES.NAME')
+                input(
+                    type='text'
+                    ng-model='ArticlesEditVM.Article.name'
+                    name='name'
+                    autocomplete='off'
+                    required
+                )
+
+                div(ng-messages='ArticlesEditVM.ngForm.email.$error')
+                    div(ng-message='required')
+                        span(translate='APP.VALIDATION.REQUIRED')
+
+            md-input-container
+                label(translate='APP.ARTICLES.DESCRIPTION')
+                textarea(ng-model='ArticlesEditVM.Article.description', required)
+                div(ng-messages='ArticlesEditVM.ngForm.password.$error')
+                    div(ng-message='required')
+                        span(translate='APP.VALIDATION.REQUIRED')
+
+            img.header(
+                ng-if='ArticlesEditVM.Article.image'
+                style='background-image:url({{ArticlesEditVM.Article.image}})'
+            )
+
+            md-button.md-fab.material-icons(
+                ng-click='ArticlesEditVM.getPicture()'
+            ) photo_camera
+
+            md-card-actions(layout='row', layout-align='end center')
+                md-button.md-primary(
+                    ng-click='ArticlesEditVM.update(ArticlesEditVM.Article)'
+                    ng-disabled='!ArticlesEditVM.ngForm.$valid || !ArticlesEditVM.Article.image'
+                    translate='APP.ARTICLES.UPDATE'
+                )

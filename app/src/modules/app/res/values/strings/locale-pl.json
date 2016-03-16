@@ -1,0 +1,24 @@
+{
+  "APP": {
+    "MENU": {
+      "SIGNIN": "Zaloguj się",
+      "SIGNUP": "Zapisz się",
+      "DASHBOARD": "Panel",
+      "ARTICLES": "Kolekcja",
+      "WEATHER": "Pogoda",
+      "TIMER": "Timer",
+      "SETTINGS": "Ustawienia konta"
+    },
+    "VALIDATION": {
+      "REQUIRED": "Pole jest wymagane.",
+      "EMAIL": "Niepoprawny adres e-mail.",
+      "FAIL": "Coś poszło nie tak. Spróbuj ponownie."
+    },
+    "NOTIFICATIONS": {
+      "BACKGROUND": {
+        "TITLE": "ngPhoneApp",
+        "TEXT": "działa w tle"
+      }
+    }
+  }
+}

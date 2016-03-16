@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        title ng-phone
+
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+
+        meta(name='format-detection', content='telephone=no')
+        meta(name='msapplication-tap-highlight', content='no')
+
+        meta(
+            name='viewport'
+            content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width'
+        )
+
+        link(rel='stylesheet', href='libs.css')
+        link(rel='stylesheet', href='styles.css')
+
+        script(src='cordova.js')
+
+        script(src='libs.js')
+        script(src='config.js')
+        script(src='strings.js')
+        script(src='layouts.js')
+        script(src='app.js')
+
+    body(ng-app='ngPhone', ng-strict-di)
+        ui-view

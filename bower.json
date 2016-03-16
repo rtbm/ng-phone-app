@@ -1,0 +1,34 @@
+{
+  "name": "ng-phone-app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Marcin Bogusz <marcin@bogusz.cc>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "angular-animate": "latest",
+    "angular-loading-bar": "latest",
+    "angular-resource": "latest",
+    "angular-sanitize": "latest",
+    "angular-mocks": "latest",
+    "angular-messages": "latest",
+    "angular-material": "latest",
+    "angular-translate": "latest",
+    "angular-ui-router": "latest",
+    "roboto-fontface": "latest",
+    "material-design-icons": "latest",
+    "angular-jwt": "latest",
+    "a0-angular-storage": "latest"
+  }
+}

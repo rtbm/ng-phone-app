@@ -1,0 +1,49 @@
+md-toolbar
+    .md-toolbar-tools
+        md-button.md-icon-button.material-icons(ng-click="AppVM.toggleSidenav()") menu
+        span(translate='APP.ACCOUNT.SIGNUP')
+
+md-content(layout='column')
+    md-card(ng-form='AccountSignupVM.ngForm')
+        md-card-header
+            md-card-header-text
+                md-title(translate='APP.ACCOUNT.SIGNUP')
+
+        md-card-content
+            md-input-container.md-block
+                label(translate='APP.ACCOUNT.EMAIL')
+                input(
+                    type='email'
+                    ng-model='AccountSignupVM.User.email'
+                    name='email'
+                    autocomplete='off'
+                    required
+                )
+
+                div(ng-messages='AccountSignupVM.ngForm.email.$error')
+                    div(ng-message='required')
+                        span(translate="APP.VALIDATION.REQUIRED")
+                    div(ng-message='email')
+                        span(translate="APP.VALIDATION.EMAIL")
+
+            md-input-container.md-block
+                label(translate='APP.ACCOUNT.PASSWORD')
+                input(
+                    type='password'
+                    ng-model='AccountSignupVM.User.password'
+                    name='password'
+                    autocomplete='off'
+                    required
+                )
+                div(ng-messages='AccountSignupVM.ngForm.password.$error')
+                    div(ng-message='required')
+                        span(translate="APP.VALIDATION.REQUIRED")
+
+            p(ng-show='AccountSignupVM.error', translate="APP.VALIDATION.FAIL")
+
+        md-card-actions(layout='row', layout-align='end center')
+            md-button.md-primary(
+                ng-click='AccountSignupVM.submit(AccountSignupVM.User)'
+                ng-disabled='!AccountSignupVM.ngForm.$valid'
+                translate="APP.ACCOUNT.SIGNUP"
+            )

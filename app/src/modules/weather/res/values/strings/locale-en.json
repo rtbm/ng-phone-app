@@ -1,0 +1,15 @@
+{
+  "APP": {
+    "WEATHER": {
+      "WEATHER": "Weather",
+      "TEMPERATURE": "Temperature",
+      "PRESSURE": "Pressure",
+      "CLOUDS": "Clouds",
+      "SUNRISE": "Sunrise",
+      "SUNSET": "Sunset",
+      "RAIN": "Rain",
+      "SNOW": "Snow",
+      "WIND": "Wind"
+    }
+  }
+}
