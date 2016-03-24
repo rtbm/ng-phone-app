@@ -1,8 +1,6 @@
 # ng-phone-app
 
-It's attempt - unfortunately, to combine ng-material with cordova to provide multiplatform mobile app stack. 
-At most it fails because of XWalk usage which is needed to proper render ng-material directives and its running
-only with Android. That's not all - despite that inconvenience some CSS styles fails in mobile chromium browser.
+It's an attempt - unfortunately, to combine ng-material with cordova to provide multiplatform mobile app stack. At most it fails because of XWalk usage which is needed to proper render ng-material directives and its running only with Android. That's not all - despite that inconvenience some CSS styles fails in mobile chromium browser.
 
 ### Browser Preview
 
